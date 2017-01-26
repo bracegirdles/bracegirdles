@@ -16,14 +16,16 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
 
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Hack Reactor Alumni Network ##
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > The Hack Reactor Alumni Network (HRAN) is a social media platform for building/maintaining relationships within the Reactor Core network. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  <!-- > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good. -->
+  > HRAN provides a platform for leveraging your Hack Reactor/Reactor Core peer network to accelerate your growth as a software engineer.  Build your own profile and link up with your fellow alumns to keep each other up to date on your job search status, current projects, and learning experiences.  Contribute to the networks value by posting self-authored articles on industry experiences and technical discoveries.  Consider this our own private LinkedIn, our *fulcrum* (if you will) to ease the burden of navigating our new journey.  
+
+  *"Then join hand in hand, brave [Hackers] all! By uniting we stand, by dividing we fall!"*
+  --John Dickinson
 
 ## Problem ##
   > Describe the problem your product solves.
