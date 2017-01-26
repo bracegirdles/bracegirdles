@@ -1,0 +1,35 @@
+{
+  "name": "bracegirdles",
+  "version": "1.0.0",
+  "description": "Greenfield Project",
+  "main": "index.js",
+  "repository": "https://github.com/bracegirdles/bracegirdles.git",
+  "contributors": [
+    "Jordan Medina",
+    "Anthony Pecchillo",
+    "Patrick Shen",
+    "Maurice Okumu"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta9",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.14.1",
+    "eslint-config-hackreactor": "reactorcore/eslint-config-hackreactor",
+    "eslint-loader": "^1.6.1",
+    "mocha": "^3.2.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
