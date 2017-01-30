@@ -98,7 +98,15 @@ Finally, push your code to your fork (origin), but with the same
 branch name as the branch you've been working on (not to orgin master)
 
 ```bash
-git push origin `your-branch-name`
+git push origin master
+```
+
+Note: If you run into difficulty pushing to your origin (i.e.
+it says your local master has diverged from origin/master), you can force
+a push with:
+
+```bash
+git push origin master -f
 ```
 
 ### Make a pull request
