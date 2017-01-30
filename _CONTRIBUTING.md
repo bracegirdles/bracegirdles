@@ -47,15 +47,21 @@ changes.
 Once you are done making changes, you can begin the process of getting
 your code merged into the main repo.
 
-While on your branch, pull down the changes from upstream with the following:
+First switch to your master branch and grab the latest updates from upstream
 
 ```bash
+git checkout master
 git pull --rebase upstream master
 ```
 
-This should apply your most recent commits on top of the existing master commits.
+Then go back to your branch and rebase those changes to your branch:
 
-However, if a conflict arises between your new code and what exists on upstream,
+```bash
+git checkout `your-branch-name`
+git rebase master
+```
+
+If a conflict arises between your new code and what exists on upstream,
 git will yell at you to fix the conflicts. To get a better picture of what
 conflicts you need to fix, type:
 
@@ -79,13 +85,21 @@ Once you are done fixing conflicts for a specific commit, run:
 git rebase --continue
 ```
 
-This will continue the rebasing process. Once you are done fixing all
-conflicts you should run the existing tests to make sure you didn’t break
-anything, then run your new tests (there are new tests, right?) and
-make sure they work also.
+This will continue the rebasing process. If all conflicts are resolved,
+the rebase should complete. Go back to master and merge your branch with your
+master as follows:
 
-If rebasing broke anything, fix it, then repeat the above process until
-you get here again and nothing is broken and all the tests pass.
+```bash
+git checkout master
+git merge --ff-only `your-branch-name`
+```
+
+Finally, push your code to your fork (origin), but with the same
+branch name as the branch you've been working on (not to orgin master)
+
+```bash
+git push origin `your-branch-name`
+```
 
 ### Make a pull request
 
