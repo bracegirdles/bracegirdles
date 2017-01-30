@@ -1,7 +1,7 @@
 // import { expect } from 'chai';
 // import request from 'supertest';
-var expect = require('chai').expect;
-var request = require('supertest');
+const expect = require('chai').expect;
+const request = require('supertest');
 
 // ----------------------------------------------------------------------
 // 'really-need' replaces Node's require with a more powerful version. In 
@@ -17,29 +17,29 @@ var request = require('supertest');
 // (but commented out) as an educational resource, but it will not be
 // utilized moving forward.
 
-describe('Loading express', function () {
+describe('Loading express', () => {
   
-  var server;
+  let server;
   
-  beforeEach(function () {
+  beforeEach( () => {
     // Line below utilizes 'really-need':
     // server = require('../../server/server.js', { bustCache: true });
     delete require.cache[require.resolve('../../server/server.js')];
     server = require('../../server/server.js');
   });
 
-  afterEach(function () {
+  afterEach( () => {
     server.close();
     console.log('Server now closed.');
   });
 
-  it('Responds to /', function testSlash(done) {
+  it('Responds to /', (done) => {
     request(server)
       .get('/')
       .expect(200, done);
   });
 
-  it('404 errors everything else', function testPath(done) {
+  it('404 errors everything else', (done) => {
     console.log('Test 404');
     request(server)
       .get('/foo/bar')
