@@ -1,31 +1,5 @@
 # Contributing
 
-## General Workflow
-
-1. Fork the repo
-1. Cut a namespaced feature branch from master
-  - bug/...
-  - feat/...
-  - test/...
-  - doc/...
-  - refactor/...
-1. Make commits to your feature branch. Prefix each commit like so:
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
-  - (refactor) ...
-  - (cleanup) ...
-  - (test) ...
-  - (doc) ...
-1. When you've finished with your fix or feature, Rebase upstream changes into your branch. submit a [pull request][]
-   directly to master. Include a description of your changes.
-1. Your pull request will be reviewed by another maintainer. The point of code
-   reviews is to help keep the codebase clean and of high quality and, equally
-   as important, to help you grow as a programmer. If your code reviewer
-   requests you make a change you don't understand, ask them why.
-1. Fix any issues raised by your code reviwer, and push your fixes as a single
-   new commit.
-1. Once the pull request has been reviewed, it will be merged by another member of the team. Do not merge your own commits.
-
 ## Detailed Workflow
 
 ### Fork the repo
@@ -68,43 +42,36 @@ only make changes that are relevant to this branch. If you find
 yourself making unrelated changes, make a new branch for those
 changes.
 
-#### Commit Message Guidelines
-
-- Commit messages should be written in the present tense; e.g. "Fix continuous
-  integration script".
-- The first line of your commit message should be a brief summary of what the
-  commit changes. Aim for about 70 characters max. Remember: This is a summary,
-  not a detailed description of everything that changed.
-- If you want to explain the commit in more depth, following the first line should
-  be a blank line and then a more detailed description of the commit. This can be
-  as detailed as you want, so dig into details here and keep the first line short.
-
 ### Rebase upstream changes into your branch
 
 Once you are done making changes, you can begin the process of getting
-your code merged into the main repo. Step 1 is to rebase upstream
-changes to the master branch into yours by running this command
-from your branch:
+your code merged into the main repo.
+
+While on your branch, pull down the changes from upstream with the following:
 
 ```bash
 git pull --rebase upstream master
 ```
 
-This will start the rebase process. You must commit all of your changes
-before doing this. If there are no conflicts, this should just roll all
-of your changes back on top of the changes from upstream, leading to a
-nice, clean, linear commit history.
+This should apply your most recent commits on top of the existing master commits.
 
-If there are conflicting changes, git will start yelling at you part way
-through the rebasing process. Git will pause rebasing to allow you to sort
-out the conflicts. You do this the same way you solve merge conflicts,
-by checking all of the files git says have been changed in both histories
-and picking the versions you want. Be aware that these changes will show
-up in your pull request, so try and incorporate upstream changes as much
-as possible.
+However, if a conflict arises between your new code and what exists on upstream,
+git will yell at you to fix the conflicts. To get a better picture of what
+conflicts you need to fix, type:
 
-You pick a file by `git add`ing it - you do not make commits during a
-rebase.
+```bash
+git status
+```
+
+You should see a picture something like this:
+<img width="689" alt="rebase_conflict_ex" src="https://cloud.githubusercontent.com/assets/19274618/22439788/d9a80a0a-e6e5-11e6-822d-a2d1203f00e4.png">
+
+In this example, it's saying there's a conflict in the package.json file. If you navigate to that file in your editor (sublime or atom), you'll see something like this:
+<img width="716" alt="rebase_conflict_ex2" src="https://cloud.githubusercontent.com/assets/19274618/22439795/df2d93e6-e6e5-11e6-8ecc-3cb5c22d0808.png">
+
+
+In this particular example, Maurice had added the dependencies mysql and sequelize while I had added request. To resolve this issue, simply delete the text that git inserted (the red highlighted text), and format the package.json to include all 3 (mysql, sequelize, and request):
+<img width="630" alt="rebase_conflict_ex3" src="https://cloud.githubusercontent.com/assets/19274618/22439797/e2289c62-e6e5-11e6-901e-f5a48c2d626d.png">
 
 Once you are done fixing conflicts for a specific commit, run:
 
@@ -132,9 +99,11 @@ they are satisfied they will merge your changes into upstream. Alternatively,
 they may have some requested changes. You should make more commits to your
 branch to fix these, then follow this process again from rebasing onwards.
 
-Once you get back here, make a comment requesting further review and
-someone will look at your code again. If they like it, it will get merged,
-else, just repeat again.
+If all changes are good to go, instead of doing the default merge, select the
+drop down arrow next to the button and select the "Rebase and merge" option:
+<img width="630" alt="rebase_and_merge" src="https://cloud.githubusercontent.com/assets/19274618/22439832/fc13f054-e6e5-11e6-8a5b-deb179ce2fde.png">
+
+This should give us a nice, clean, linear history :)
 
 Thanks for contributing!
 
