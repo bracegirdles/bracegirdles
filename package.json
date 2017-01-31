@@ -48,7 +48,7 @@
     "build:dev": "webpack --env.dev",
     "start": "nodemon server/server.js",
     "dev": "webpack-dev-server --env.dev",
-    "validae": "npm-run-all --parallel lint build",
+    "validate": "npm-run-all --parallel lint build",
     "lint": "eslint ."
   }
 }
