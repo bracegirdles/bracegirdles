@@ -4,17 +4,17 @@ import Post from './postModel';
 
 let User = Sequelize.define('user', {
   name: {
-  	Sequelize.STRING,
+  	type: Sequelize.STRING,
   	allowNull: false
   },
   email: {
-  	type:Sequelize.STRING,
+  	type: Sequelize.STRING,
   	unique: true
   },
   cohort: Sequelize.STRING,
   status: Sequelize.STRING,
   github: {
-  	type:Sequelize.STRING,
+  	type: Sequelize.STRING,
   	unique: true
   }
 
