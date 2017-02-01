@@ -8,8 +8,8 @@ let Post = Sequelize.define('user', {
 
   },
   content: {
-  	type:Sequelize.TEXT,
-  	allowNull: false,
+  	type: Sequelize.TEXT,
+  	allowNull: false
   }
 });
 
