@@ -1,7 +1,7 @@
-import { Sequelize } from 'sequelize';
+import db from '../db.js'
 
 
-let Post = Sequelize.define('user', {
+let Post = db.define('Post', {
   title: {
   	type: Sequelize.STRING,
   	unique: true
@@ -13,4 +13,4 @@ let Post = Sequelize.define('user', {
   }
 });
 
-module.exports = Post;
+export default Post;
