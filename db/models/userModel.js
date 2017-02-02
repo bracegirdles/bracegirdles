@@ -1,28 +1,36 @@
-import { Sequelize } from 'sequelize';
+import db from '../db.js';
 import Post from './postModel';
 
 
-let User = Sequelize.define('user', {
+let User = db.define('User', {
   name: {
   	type: Sequelize.STRING,
   	allowNull: false
   },
   email: {
   	type: Sequelize.STRING,
-  	unique: true
+    unique: true
   },
   cohort: Sequelize.STRING,
   status: Sequelize.STRING,
   github: {
   	type: Sequelize.STRING,
-  	unique: true
+    unique: true
   }
 
 });
-// This connectiong to be made in the database
-//User.hasMany(Post);
 
-//Don't use force in production
-Sequelize.sync({ force: true });
 
-module.exports = User;
+//Create a userId column in the Post table;
+Post.belongsTo(User);
+
+//Enable association between user and post
+User.hasMany(Post);
+
+
+//Creates tables in MySql if they do not exist
+//The force drops any exissting tables beforehand
+User.sync({force: true});
+Post.sync({force: true});
+
+export default User;
