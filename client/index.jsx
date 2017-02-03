@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Pic from './Pic.jsx';
-import BioList from './BioList.jsx';
-import Content from './Content.jsx';
+import Pic from '/ProfileComponents/Pic.jsx';
+import BioList from '/ProfileComponents/BioList.jsx';
+import Content from '/ProfileComponents/Content.jsx';
 
 //comment out once we get real data
-import fakeData from './fakeData.jsx';
+import fakeData from '/ProfileComponents/fakeData.jsx';
 
 class Profile extends React.Component {
   constructor(props) {
