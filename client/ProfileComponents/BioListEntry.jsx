@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-const BioListEntry = ({user}) => (
-  <ul>
-    <li>{user.status} <span>Status</span></li>
-    <li>{user.cohort} <span>Cohort</span></li>
+const BioListEntry = ({status, cohort}) => (
+  <ul className="bio-body">
+    <li>{status} <span>Status</span></li>
+    <li>{cohort} <span>Cohort</span></li>
   </ul>
 );
 

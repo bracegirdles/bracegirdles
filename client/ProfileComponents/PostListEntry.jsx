@@ -2,16 +2,11 @@
 
 import React from 'react';
 
-const PostListEntry = ({postEntry}) => (
+const PostListEntry = ({title, content}) => (
   <div className="post-list-entry">
-    <div className="post-list-entry-title">
-      {postEntry.title}
-    </div>
-    <div className="post-list-entry-link">
-      {postEntry.content}
-    </div>
+    <h4>{title}</h4>
+    <p>{content}</p>
   </div>
-
 );
 
 PostListEntry.propTypes = {
