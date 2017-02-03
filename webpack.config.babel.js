@@ -7,7 +7,7 @@ export default env => {
 
   const config = webpackValidator({
     context: resolve('client'),
-    entry: './index.js',
+    entry: './index.jsx',
     output: {
       filename: 'bundle.js',
       path: resolve('dist'),
