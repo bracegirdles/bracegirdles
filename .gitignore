@@ -10,7 +10,7 @@ pids
 *.seed
 
 # Compiled Files
-# To do
+dist/
 
 # Dependency directorys
 # Deployed apps should consider commenting these lines out:
