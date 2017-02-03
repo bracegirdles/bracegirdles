@@ -1,10 +1,9 @@
-// Component for entire Profile page. It should render Pic, Bio, Posts, and Friends.
-
 import React from 'react';
-import Pic from './Pic.jsx';
-import BioList from './BioList.jsx';
-import PostList from './PostList.jsx';
-import Friends from './Friends.jsx';
+import ReactDOM from 'react-dom';
+import Pic from './ProfileComponents/Pic.jsx';
+import BioList from './ProfileComponents/BioList.jsx';
+import Content from './ProfileComponents/Content.jsx';
+import fakeData from './ProfileComponents/fakeData.jsx';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -17,18 +16,18 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <div className="pic-position">
-          <Pic photo={this.props.fakePhoto} />
-        </div>
-        <div className="bio-position">
-          <BioList userInfo={this.props.fakeUser} />
-        </div>
-        <div className="posts-position">
-          <PostList posts={this.props.fakePosts} />
-        </div>
-        <div className="friends-position">
-          <Friends friends={this.props.fakeFriends} />
-        </div>
+        <h1>
+          <small>Profile Page for HR Peeps</small>
+        </h1>
+        <header>
+          <figure className="profile-banner">
+            <img src={"https://hrhqdir.s3.amazonaws.com/assets/ssom-landing-page/assets/images/logo/hack-reactor-logo-gray-blue.png"} style={{width: 350, height: 100}}/>
+          </figure>
+          <Pic photo={this.props.photo} />
+          <BioList userInfo={this.props.userInfo} />
+          <h1>{this.props.userInfo.name}</h1>
+        </header>
+          <Content userInfo={this.props.userInfo} posts={this.props.posts} friends={this.props.friends} />
       </div>
     );
   }

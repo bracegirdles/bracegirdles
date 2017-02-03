@@ -1,9 +1,10 @@
 import React from 'react';
-import IntroEntry from './IntroEntry.jsx';
 
-const Intro = ({userInfo}) => (
+const Intro = ({description, email, github}) => (
   <div className='intro-container'>
-    <IntroEntry user={userInfo} />
+    <div>{description}</div>
+    <div>email: {email}</div>
+    <div>github: {github}</div>
   </div>
 );
 
