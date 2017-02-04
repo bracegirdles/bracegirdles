@@ -24,7 +24,8 @@ let User = db.define('User', {
 });
 
 //Create a userId column in the Post table;
-Post.belongsTo(User);
+//Set the forignKey property to point to the user
+Post.belongsTo(User, { foreignKey: 'userId'});
 
 //Enable association between user and post
 User.hasMany(Post);
