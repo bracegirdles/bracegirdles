@@ -1,15 +1,13 @@
-import db from '../db.js'
-
+import db from '../db.js';
 
 let Post = db.define('Post', {
   title: {
-  	type: Sequelize.STRING,
-  	unique: true
-
+    type: Sequelize.STRING,
+    unique: true
   },
   content: {
-  	type: Sequelize.TEXT,
-  	allowNull: false
+    type: Sequelize.TEXT,
+    allowNull: false
   }
 });
 
