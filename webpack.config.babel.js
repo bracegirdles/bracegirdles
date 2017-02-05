@@ -10,8 +10,7 @@ export default env => {
     context: resolve('client'),
     entry: {
       profile: './profileIndex.jsx',
-      landing: './landingIndex.jsx',
-      signup: './signupIndex.jsx'
+      landing: './landingIndex.jsx'
     },
     output: {
       filename: 'bundle.[name].js',
