@@ -3,9 +3,12 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const util = require('../lib/utility.js');
+const bcrypt = require('bcrypt-nodejs');
+const util = require('../lib/utility');
 const mysql = require('mysql');
-const db = require('../db/db.js');
+const db = require('../db/db');
+const Users = require('../db/models/userModel');
+const Posts = require('../db/models/postModel');
 
 const app = express();
 
@@ -28,99 +31,81 @@ app.use(session({
 }));
 
 // ----------------------------------------------------------------------------
+// Routes (with Authentication):
 // ----------------------------------------------------------------------------
-app.get('/', util.checkUser, function(req, res) {
-  res.render('index');
-});
-
-// Authentication Routes:
-app.get('/login', function(req, res) {
-  res.render('login');
-});
-
-// -------------------------------Revisit--------------------------------------
-app.post('/login', function(req, res) {
-  var username = req.body.username;
-  var password = req.body.password;
-
-  new User({ username: username })
-    .fetch()
-    .then(function(user) {
-      if (!user) {
-        res.redirect('/login');
-      } else {
-        // BASIC VERSION
-        // bcrypt.compare(password, user.get('password'), function(err, match) {
-        //   if (match) {
-        //     util.createSession(req, res, user);
-        //   } else {
-        //     res.redirect('/login');
-        //   }
-        // });
-        // ADVANCED VERSION -- see user model
-        user.comparePassword(password, function(match) {
-          if (match) {
-            util.createSession(req, res, user);
-          } else {
-            res.redirect('/login');
-          }
-        });
-      }
-    });
-});
-// ----------------------------------------------------------------------------
-
-app.get('/logout', function(req, res) {
-  req.session.destroy(function() {
-    res.redirect('/login');
-  });
+app.get('/', function(req, res) {
+  if (util.checkUser) {
+    res.redirect('/profile');
+  } else {
+    res.render('landing');
+  }
 });
 
 app.get('/signup', function(req, res) {
   res.render('signup');
 });
 
-// -------------------------------Revisit--------------------------------------
 app.post('/signup', function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
+  var name = req.body.name;
+  var email = req.body.email;
+  var cohort = req.body.cohort;
+  var status = req.body.status;
+  var github = req.body.github;
 
-  new User({ username: username })
-    .fetch()
-    .then(function(user) {
-      if (!user) {
-        // BASIC VERSION
-        // bcrypt.hash(password, null, null, function(err, hash) {
-        //   Users.create({
-        //     username: username,
-        //     password: hash
-        //   }).then(function(user) {
-        //       util.createSession(req, res, user);
-        //   });
-        // });
-        // ADVANCED VERSION -- see user model
-        var newUser = new User({
+  Users.findOne({where: {username: username}}).then(function(user) {
+    if (!user) {
+      bcrypt.hash(password, null, null, function(err, hash) {
+        Users.create({
           username: username,
-          password: password
+          password: hash,
+          name: name,
+          email: email,
+          cohort: cohort,
+          status: status,
+          github: github
+        }).then(function(user) {
+          util.createSession(req, res, user);
         });
-        newUser.save()
-          .then(function(newUser) {
-            util.createSession(req, res, newUser);
-          });
-      } else {
-        console.log('Account already exists');
-        res.redirect('/signup');
-      }
-    });
+      });
+    } else {
+      alert('Account already exists!  Try again.');
+      res.redirect('/signup');
+    }
+  });
+});
+
+app.post('/login', function(req, res) {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  Users.findOne({where: {username: username}}).then(function(user) {
+    if (!user) {
+      res.redirect('/');
+    } else {
+      bcrypt.compare(password, user.get('password'), function(err, match) {
+        if (match) {
+          util.createSession(req, res, user);
+        } else {
+          res.redirect('/');
+        }
+      });      
+    }
+  });
+});
+
+app.get('/logout', function(req, res) {
+  req.session.destroy(function() {
+    res.redirect('/');
+  });
+});
+
+app.get('/profile', util.checkUser, function(req, res) {
+  res.render('profile');
 });
 // ----------------------------------------------------------------------------
 
-// More of above to come...
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------------
-
-// SHOULD THIS GO IN A SEPARATE FILE CALLED index.js??????
-// Establish server connection at localhost:3000
 const server = app.listen(3000, '127.0.0.1', () => {
   const port = server.address().port;
   console.log('Basic server for HRAN listening at port', port);
