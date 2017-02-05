@@ -12,8 +12,8 @@ const NavBar = () => (
           <li><a href="#about">About</a></li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
-          <li><a href="#signup">Signup  <i className="fa fa-user-plus"></i></a></li>
-          <li><a href="#login">Login  <i className="fa fa-user"></i></a></li>
+          <li><a href="/signup">Signup  <i className="fa fa-user-plus"></i></a></li>
+          <li><a href="/login">Login  <i className="fa fa-user"></i></a></li>
         </ul>
       </div>
     </div>
