@@ -7,13 +7,18 @@ db.sync();
 module.exports = {
   posts: {
     get: (req, res) => {
+    //might need to pass in parameters in findall	
     Post.findAll()
+    //example of findAll parameter
+    //findAll({where : {username : req.body.username}})
     .then((message) => {
       res.json(message)
     })
 
     },
     post: (req, res) => {
+     //check for relation between user and post and pass it in
+     //as a param in findorcreate	
       User.findOrCreate()
       .spread(() => {
         Post.create({
