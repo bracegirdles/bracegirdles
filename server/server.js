@@ -11,6 +11,7 @@ const Users = require('../db/models/userModel');
 const Posts = require('../db/models/postModel');
 
 const app = express();
+const router = require('./routes.js')
 
 // Server Side Rendering:
 app.set('views', path.join(__dirname, 'views'));
