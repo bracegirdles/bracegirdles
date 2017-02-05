@@ -22,7 +22,6 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Static files to server:
 app.use(express.static(path.resolve('dist')));
 
 // Enable sessions:
@@ -35,7 +34,6 @@ app.use(session({
 // ----------------------------------------------------------------------------
 // Routes (with Authentication):
 // ----------------------------------------------------------------------------
-<<<<<<< 21b3580fe7097cd72c85057b4b7480ef79b2be27
 app.get('/', function(req, res) {
   if (util.checkUser) {
     res.redirect('/profile');
