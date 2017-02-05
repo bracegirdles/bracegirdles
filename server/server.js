@@ -11,6 +11,7 @@ const Users = require('../db/models/userModel');
 const Posts = require('../db/models/postModel');
 
 const app = express();
+//imported the router
 const router = require('./routes.js')
 
 // Server Side Rendering:
@@ -34,6 +35,7 @@ app.use(session({
 // ----------------------------------------------------------------------------
 // Routes (with Authentication):
 // ----------------------------------------------------------------------------
+<<<<<<< 21b3580fe7097cd72c85057b4b7480ef79b2be27
 app.get('/', function(req, res) {
   if (util.checkUser) {
     res.redirect('/profile');
@@ -105,6 +107,8 @@ app.get('/logout', function(req, res) {
 app.get('/profile', util.checkUser, function(req, res) {
   res.render('profile');
 });
+
+
 // ----------------------------------------------------------------------------
 
 const server = app.listen(3000, '127.0.0.1', () => {
