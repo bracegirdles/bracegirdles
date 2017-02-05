@@ -1,11 +1,20 @@
-import db from '../db.js';
-import Post from './postModel';
+const Sequelize = require('sequelize');
+const db = require('../db.js');
+const Post = require('./postModel.js');
 
 let User = db.define('User', {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     primaryKey: true
+  },
+  username: {
+    type: Sequelize.STRING,
+    unique: true
+  },
+  password: {
+    type: Sequelize.STRING,
+    unique: true
   },
   name: {
     type: Sequelize.STRING,
@@ -25,7 +34,12 @@ let User = db.define('User', {
 
 //Create a userId column in the Post table;
 //Set the forignKey property to point to the user
-Post.belongsTo(User, { foreignKey: 'userId'});
+Post.belongsTo(User);  
+
+// Removed {foreignKey: 'userId'}) from line 37.  Was giving the following error:
+// Unhandled rejection SequelizeDatabaseError: ER_DUP_FIELDNAME: Duplicate column name 'UserId'
+// 
+// Now foreign key defaults to UserId
 
 //Enable association between user and post
 User.hasMany(Post);
@@ -35,4 +49,4 @@ User.hasMany(Post);
 User.sync({force: true});
 Post.sync({force: true});
 
-export default User;
+module.exports = User;
