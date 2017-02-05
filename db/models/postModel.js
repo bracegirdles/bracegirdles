@@ -1,4 +1,5 @@
-import db from '../db.js';
+const Sequelize = require('sequelize');
+const db = require('../db.js');
 
 let Post = db.define('Post', {
   title: {
@@ -11,4 +12,4 @@ let Post = db.define('Post', {
   }
 });
 
-export default Post;
+module.exports = Post;
