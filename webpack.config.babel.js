@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import webpackValidator from 'webpack-validator';
+import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import { getIfUtils } from 'webpack-config-utils';
 
 export default env => {
@@ -7,11 +8,14 @@ export default env => {
 
   const config = webpackValidator({
     context: resolve('client'),
-    entry: './index.jsx',
+    entry: {
+      profile: './profileIndex.jsx',
+      landing: './landingIndex.jsx',
+      signup: './signupIndex.jsx'
+    },
     output: {
-      filename: 'bundle.js',
+      filename: 'bundle.[name].js',
       path: resolve('dist'),
-      publicPath: '/dist/',
       pathinfo: ifNotProd()   // this is for debugging import statements in dev mode
     },
     devtool: ifProd('source-map', 'eval'),
@@ -23,7 +27,10 @@ export default env => {
           exclude: /node_modules/
         }
       ]
-    }
+    },
+    plugins: [
+      new ProgressBarPlugin()
+    ]
   });
 
   return config;
