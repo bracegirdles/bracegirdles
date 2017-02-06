@@ -1,46 +1,57 @@
-# Project Name #
+# Hack Reactor Alumni Network #
 
-<!--
-> This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
-
-There is an approach called "working backwards" that is widely used at Amazon. They work backwards from the customer, rather than starting with an idea for a product and trying to bolt customers onto it. While working backwards can be applied to any specific product decision, using this approach is especially important when developing new products or features.
-
-For new initiatives a product manager typically starts by writing an internal press release announcing the finished product. The target audience for the press release is the new/updated product's customers, which can be retail customers or internal users of a tool or technology. Internal press releases are centered around the customer problem, how current solutions (internal or external) fail, and how the new product will blow away existing solutions.
-
-If the benefits listed don't sound very interesting or exciting to customers, then perhaps they're not (and shouldn't be built). Instead, the product manager should keep iterating on the press release until they've come up with benefits that actually sound like benefits. Iterating on a press release is a lot less expensive than iterating on the product itself (and quicker!).
-
-If the press release is more than a page and a half, it is probably too long. Keep it simple. 3-4 sentences for most paragraphs. Cut out the fat. Don't make it into a spec. You can accompany the press release with a FAQ that answers all of the other business or execution questions so the press release can stay focused on what the customer gets. My rule of thumb is that if the press release is hard to write, then the product is probably going to suck. Keep working at it until the outline for each paragraph flows.
-
-Oh, and I also like to write press-releases in what I call "Oprah-speak" for mainstream consumer products. Imagine you're sitting on Oprah's couch and have just explained the product to her, and then you listen as she explains it to her audience. That's "Oprah-speak", not "Geek-speak".
-
-Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
- -->
-
-## Hack Reactor Alumni Network ##
-
-  > The Hack Reactor Alumni Network (HRAN) is a social media platform for building/maintaining relationships within the Reactor Core network. 
+The Hack Reactor Alumni Network (HRAN) is a social media platform for building/maintaining relationships within the Reactor Core network. 
 
 ## Summary ##
-  <!-- > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good. -->
-  > HRAN provides a platform for leveraging your Hack Reactor/Reactor Core peer network to accelerate your growth as a software engineer.  Build your own profile and link up with your fellow alumns to keep each other up to date on your job search status, current projects, and learning experiences.  Contribute to the networks value by posting self-authored articles on industry experiences and technical discoveries.  Consider this our own private LinkedIn, our *fulcrum* (if you will) to ease the burden of navigating our new journey.  
 
-  *"Then join hand in hand, brave [Hackers] all! By uniting we stand, by dividing we fall!"*
+HRAN provides a platform for leveraging your Hack Reactor/Reactor Core peer network to accelerate your growth as a software engineer.  Build your own profile and link up with your fellow alumni/alumnae to keep each other up to date on your job search status, current projects, and learning experiences.  Contribute to the networks value by posting self-authored articles on industry experiences and technical discoveries.  Consider this our own private LinkedIn, our *fulcrum* (if you will) to ease the burden of navigating our new journey.
+
+>*"Then join hand in hand, brave [Hackers] all! By uniting we stand, by dividing we fall!"*
   --John Dickinson
 
 ## Problem ##
-  > Describe the problem your product solves.
+When you're new to a particular industry, a solid network is paramount to your success in landing a job and to your upward mobility thereafter.  Hack Reactor (and its sister schools) are a great place to accelerate the establishment of such a network, but this process must continue post-graduation.  Many people find networking to be a daunting, awkward, unpleasant process, but with the size of Hack Reactor's total pool of graduates, it doesn't have to be!
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+HRAN allows you to easily link up not only with students from your own cohort, but with those from previous and current cohorts as well.  There are currently over 1700 graduates of the HRSF, and many more if we consider all of the Reactor Core sister schools.  What a great place to start!
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > *"At HRAN, we strive to narrow the gap between you and the establishment of your inner circle.  Other professional networking tools are great, but HRAN has the power to increase the size and unity of our core alumni network."*
+    --A Very Charismatic Spokesperson
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Getting started is simple!  
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+#### Sign Up ####
+
+  From the HRAN landing page:  
+
+  1. Click the sign up button to navigate to our registration page.
+
+  2. Provide your pertinent information in the registration form.  
+      - Upon submitting the form, you will be automatically logged in and redirected to the Main Feed.
+      
+#### Set Up Your Profile ####
+
+  3. Click settings to edit your profile.  
+      - Add a Bio
+      - Add your Picture
+      - Add links to your LinkedIn, GitHub, Twitter, etc.
+
+  4. Click Profile to see your updated profile.
+
+#### Check Out the Feed ####
+
+  5. Click Feed to read the most recent posts from the Alumni Network.
+
+  6. Submit your first post!
+
+## Customer Testimonials ##
+  > *"Prior to registering for HRAN, I found networking with Hack Reactor alumni from previous cohorts to be awkward.  Though we shared common ground in a similar experience, there was no medium through which to begin comfortably interacting.  HRAN provides a means to keep myself in the loop about the experiences and successes of my fellow alumni and has expanded my professional network significantly."*
+    --A Simple Peasant
+
+  > *"[Our] whole is greater than the sum of [our] individual parts."*
+    --Aristotle (Yes, he's an HR graduate.)
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  Connect with fellow Hack Reactor Alumni now!  Visit HRAN [LINK HERE] to get started, and be sure to contribute to the community!
