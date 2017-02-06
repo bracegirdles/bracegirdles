@@ -6,7 +6,7 @@ const getIfUtils = require('webpack-config-utils').getIfUtils;
 module.exports = env => {
   const { ifProd, ifNotProd } = getIfUtils(env);
   const config = webpackValidator({
-    context: path.resolve('client'),
+    context: resolve('client'),
     entry: {
       profile: './profileIndex.jsx',
       landing: './landingIndex.jsx',
@@ -16,7 +16,7 @@ module.exports = env => {
     },
     output: {
       filename: 'bundle.[name].js',
-      path: path.resolve('dist'),
+      path: resolve('dist'),
       pathinfo: ifNotProd()   // this is for debugging import statements in dev mode
     },
     devtool: ifProd('source-map', 'eval'),
