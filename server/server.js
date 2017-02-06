@@ -99,6 +99,9 @@ app.get('/feed', util.checkUser, function(req, res) {
   res.render('feed');
 })
 
+app.get('/settings', util.checkUser, function(req, res){
+  res.render('settings');
+})
 
 // ----------------------------------------------------------------------------
 
