@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import css from './styles.css'
+import css from './css/profile.css'
 
 //comment out once we get real data
 import fakeData from './ProfileComponents/fakeData.jsx';
