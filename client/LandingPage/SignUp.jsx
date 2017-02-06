@@ -3,6 +3,7 @@ import PageOut from '../PageOut.jsx';
 
 const SignUp = () => (
   <PageOut>
+    <form>
     <div className="row">
       <div className="tab-content">
         <div role="tabpanel" className="tab-pane active" id="step-1">
