@@ -6,8 +6,8 @@ const controller = require('./controller.js');
 //To talk to the database
 router.get('/users', controller.users.get);
 router.post('/users', controller.users.post);
-router.get('/posts', controller.users.get);
-router.post('/posts', controller.users.post);
+router.get('/posts', controller.posts.get);
+router.post('/posts', controller.posts.post);
 
 //Export the router with the Sequelize routes
 module.exports = router;
