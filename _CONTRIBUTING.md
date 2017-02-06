@@ -7,17 +7,19 @@
 Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
 
 ```
-git remote add upstream https://github.com/reactorcore/<NAME_OF_REPO>.git
+git remote add upstream https://github.com/bracegirdles/bracegirdles.git
 ```
 
 ### Cut a namespaced feature branch from master
 
 Your branch should follow this naming convention:
-  - bug/...
   - feat/...
   - test/...
   - doc/...
   - refactor/...
+  - fix/...
+  - build/...
+  etc
 
 These commands will help you do this:
 
@@ -94,16 +96,25 @@ git checkout master
 git merge --ff-only `your-branch-name`
 ```
 
-Finally, push your code to your fork (origin), but with the same
-branch name as the branch you've been working on (not to orgin master)
+Before pushing to your repo, check to see if your master branch has a linear
+commit history that is the same linear history of the upstream master, *plus*
+the additional commits you have with:
 
 ```bash
-git push origin master
+git hist
 ```
 
-Note: If you run into difficulty pushing to your origin (i.e.
-it says your local master has diverged from origin/master), you can force
-a push with:
+Note: If you don't have the `git hist` alias, open your .gitconfig file and
+add the following alias:
+```bash
+[alias]
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+```
+
+Finally, push your code to your fork (origin/master). You will likely
+run into difficulty pushing to your origin (i.e.
+it says your local master has diverged from origin/master), so to successfully
+push, type:
 
 ```bash
 git push origin master -f
