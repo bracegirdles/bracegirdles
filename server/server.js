@@ -67,8 +67,9 @@ app.get('/login', function(req, res) {
 app.post('/login', function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
+  console.log('req.body.username: ', req.body.username);
 
-  Users.findOne({where: {username: username}}).then(function(user) {
+  controller.users.getOne(username).then(function(user) {
     if (!user) {
       console.log('No such user.');
       res.redirect('/');
