@@ -17,6 +17,13 @@ const Login = () => (
             </div>
             <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
           </form>
+          <div className="row omb_row-sm-offset-3 omb_loginOr">
+            <div className="col-xs-12 col-sm-6">
+              <hr className="omb_hrOr"></hr>
+              <span className="omb_spanOr">Or</span>
+            </div>
+          </div>
+          <button className="btn btn-lg btn-primary btn-block" type="submit">SignUp</button>
         </div>
       </div>
     </div>

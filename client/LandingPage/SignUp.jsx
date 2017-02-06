@@ -1,9 +1,8 @@
 import React from 'react';
-import NavBar from './NavBar.jsx';
+import PageOut from '../PageOut.jsx';
 
-const SignUp = (props) => (
-  <form className="signup-container" action="/signup" method="post">
-    <NavBar />
+const SignUp = () => (
+  <PageOut>
     <div className="row">
       <div className="tab-content">
         <div role="tabpanel" className="tab-pane active" id="step-1">
@@ -63,6 +62,7 @@ const SignUp = (props) => (
         </div>
       </div>
     </form>
+  </PageOut>
 );
 
 export default SignUp;

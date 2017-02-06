@@ -11,8 +11,8 @@ const NavBarIn = () => (
             <li><a href="/profile">Profile</a></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li style="float:right"><a href="/settings">Settings</a></li>
+            <li style="float:right"><a href="/logout">Logout</a></li>
           </ul>
         </div>
       </div>

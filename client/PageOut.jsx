@@ -1,15 +1,15 @@
 import React from 'react';
-import NavBarIn from './SettingsComponents/NavBarIn.jsx';
+import NavBar from './LandingPage/NavBar.jsx';
 
-const PageIn = (props) => (
+const PageOut = (props) => (
   <html>
     <body>
       <div id="container">
-        <NavBarIn />
+        <NavBar />
         {props.children}
       </div>
     </body>
   </html>
 );
 
-export default PageIn;
+export default PageOut;
