@@ -7,16 +7,16 @@ import PostSubmit from './PostSubmit.jsx';
 const PostList = ({posts}) => (
   <div className="container">
     <div className="col-lg-3"></div>
-    <div className="post">
       <h3>Posts</h3>
       <div className="col-lg-6">
         <PostSubmit />
-        {posts.map((post, i) =>
-          <PostListEntry postEntry={post} key={i}/>
-        )}
+        <div className="post-entries">
+          {posts.map((post, i) =>
+            <PostListEntry postEntry={post} key={i}/>
+          )}
+        </div>
       </div>
       <div className="col-lg-3"></div>
-    </div>
   </div>
 );
 

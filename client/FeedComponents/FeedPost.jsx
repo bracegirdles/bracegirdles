@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FeedPost = ({post}) => (
-  <div className="feed-post">
+  <div className="feed-post-entry">
     <div className="row">
       <div className="col-lg-2">
         <div className="thumbnail">
