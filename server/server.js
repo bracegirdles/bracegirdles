@@ -13,7 +13,7 @@ const bcrypt = require('bcrypt-nodejs');
 // Middleware & helpers
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const util = require('../lib/utility');
+const util = require('./utility');
 
 // Server Side Rendering:
 // We use pug to render the individual pages
