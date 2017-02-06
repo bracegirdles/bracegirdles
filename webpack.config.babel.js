@@ -7,8 +7,8 @@ module.exports = env => {
   const { ifProd, ifNotProd } = getIfUtils(env);
   const config = webpackValidator({
     context: resolve('client'),
-    entry: {
-      profile: './profileIndex.jsx',
+    entry: {                              // If you add more pages, add it as
+      profile: './profileIndex.jsx',      // an entry point here
       landing: './landingIndex.jsx',
       feed: './feedIndex.jsx',
       signup: './signupIndex.jsx',
@@ -23,14 +23,14 @@ module.exports = env => {
     module: {
       loaders: [
         {
-          test: /\.jsx*$/,
+          test: /\.jsx*$/,            // this transpiles the jsx files to es5
           loaders: [ 'babel' ],
           exclude: /node_modules/
         },
         {
           test: /\.css$/,
-          loaders: ['style', 'css']
-        }
+          loaders: ['style', 'css'] // this will inject any imported css file
+        }                           // in the above entry points to the head`
       ]
     },
     plugins: [

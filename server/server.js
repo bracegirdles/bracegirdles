@@ -1,24 +1,26 @@
 // Include Modules:
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const bcrypt = require('bcrypt-nodejs');
-const util = require('../lib/utility');
-const mysql = require('mysql');
-const db = require('../db/db');
-const Users = require('../db/models/userModel');
-const Posts = require('../db/models/postModel');
-
 const app = express();
 
-// Import Router:
-// const router = require('./routes.js');    // CHANGE HERE
+// Database related
+const db = require('../db/db');
 const controller = require('./controller.js');
+const Users = require('../db/models/userModel');
+const Posts = require('../db/models/postModel');
+const bcrypt = require('bcrypt-nodejs');
+
+// Middleware & helpers
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const util = require('../lib/utility');
 
 // Server Side Rendering:
-app.set('views', path.join(__dirname, 'views'));  // CHANGE HERE
-app.set('view engine', 'pug');                    // CHANGE HERE
+// We use pug to render the individual pages
+// In the views folder there are .html and .pug pairs
+// If you'd like to add more routes, be sure to add both!
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 // Parse JSON and Parse Forms (signup/login):
 app.use(bodyParser.json());
@@ -33,12 +35,10 @@ app.use(session({
   saveUninitialized: true
 }));
 
+
 // ----------------------------------------------------------------------------
-// Routes (with Authentication):
+// Public Facing Routes (non-authentication):
 // ----------------------------------------------------------------------------
-app.get('/', util.checkUser, function(req, res) {
-  res.render('feed');
-});
 
 app.get('/signup', function(req, res) {
   res.render('signup');
@@ -91,6 +91,14 @@ app.get('/logout', function(req, res) {
   });
 });
 
+// ----------------------------------------------------------------------------
+// Routes (with Authentication):
+// ----------------------------------------------------------------------------
+
+app.get('/', util.checkUser, function(req, res) {
+  res.render('feed');
+});
+
 app.get('/profile', util.checkUser, function(req, res) {
   res.render('profile');
 });
@@ -102,7 +110,6 @@ app.get('/feed', util.checkUser, function(req, res) {
 app.get('/settings', util.checkUser, function(req, res){
   res.render('settings');
 })
-
 // ----------------------------------------------------------------------------
 
 const server = app.listen(3000, '127.0.0.1', () => {
