@@ -1,6 +1,10 @@
-# Project Name
+# Hack Reactor Alumni Network
 
-> Pithy project description
+> The Hack Reactor Alumni Network (HRAN) is a social media platform for building/maintaining relationships within the Reactor Core network. 
+
+> HRAN provides a platform for leveraging your Hack Reactor/Reactor Core peer network to accelerate your growth as a software engineer.  Build your own profile and link up with your fellow alumns to keep each other up to date on your job search status, current projects, and learning experiences.  Contribute to the networks value by posting self-authored articles on industry experiences and technical discoveries.  Consider this our own private LinkedIn, our *fulcrum* (if you will) to ease the burden of navigating our new journey.  
+
+> THIS WILL BE UPDATED WITH A MESSAGE DIRECTED MORE TOWARD A POTENTIAL DEVELOPER!
 
 ## Team
 
@@ -24,11 +28,10 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Yarn v0.19.1
+- Node v6.1.0
+- Nodemon 1.11.0
+- MySQL 5.7.17
 
 ## Development
 
@@ -37,9 +40,22 @@
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
-npm install
-bower install
+yarn
+```
+### Transpiling React Codebase
+
+Run the following after making any changes to your front-end React code:
+
+```sh
+yarn build:dev
+```
+
+### Starting the Server
+
+To start the server using Nodemon to watch for any file changes:
+
+```sh
+yarn start
 ```
 
 ### Roadmap
