@@ -34,7 +34,10 @@ module.exports = {
     }
   },
   users: {
-    get: (req, res) => {
+    getOne: (username) => {
+      User.findOne({where: {username: username}});
+    },
+    getAll: (req, res) => {
       //Pass in parameters as object with where as property
       // value as object and the parameters as key value pair
       User.findAll([params])
@@ -45,29 +48,30 @@ module.exports = {
     },
     post: (req, res) => {
       User.create({
-        name: req.body.username,
+        username: req.body.username,
+        password: req.body.password,
+        name: req.body.name,
         email: req.body.email,
-<<<<<<< HEAD
-        cohort:req.body.cohort,
-        status: req.body.status,
-=======
         cohort: req.body.cohort,
         status: req.body.status, 
->>>>>>> (cleanup) Syntax cleanup.  Tabs to spaces, indentation.
         github: req.body.github
       })
       .then((user) => {
         user.save();
-      })
-      .then(() => {
-<<<<<<< HEAD
-      	res.sendStatus(201);
-      })
-
-=======
-        res.sendStatus(201);
+        return user;
       });
->>>>>>> (cleanup) Syntax cleanup.  Tabs to spaces, indentation.
     }
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
