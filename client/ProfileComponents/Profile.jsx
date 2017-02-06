@@ -5,6 +5,9 @@ import BioList from './BioList.jsx';
 import Content from './Content.jsx';
 import fakeData from './fakeData.jsx';
 
+// TEMPORARY FOR DEV PURPOSES:
+import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +19,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
+        <NavBarIn />
         <header>
           <figure className="profile-banner">
             <img src={"https://hrhqdir.s3.amazonaws.com/assets/ssom-landing-page/assets/images/logo/hack-reactor-logo-gray-blue.png"} style={{width: 350, height: 100}}/>
