@@ -16,9 +16,6 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <h1>
-          <small>Profile Page for HR Peeps</small>
-        </h1>
         <header>
           <figure className="profile-banner">
             <img src={"https://hrhqdir.s3.amazonaws.com/assets/ssom-landing-page/assets/images/logo/hack-reactor-logo-gray-blue.png"} style={{width: 350, height: 100}}/>

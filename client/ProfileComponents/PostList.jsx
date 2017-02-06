@@ -9,8 +9,8 @@ const PostList = ({posts}) => (
     <h3>Posts</h3>
     <PostSubmit />
     <div className="post-list">
-      {posts.map(postEntry =>
-        <PostListEntry postEntry={postEntry} />
+      {posts.map(post =>
+        <PostListEntry postEntry={post} />
       )}
     </div>
   </div>

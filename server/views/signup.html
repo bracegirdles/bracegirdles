@@ -1,49 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hack Reactor Alumni Network | Sign Up</title>
+    <title>SignUp</title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
-    <h2>Sign up</h2>
-      <form action="/signup" method="post">
-          <div>
-            <label for="username">Username:</label>
-            <input id="username" type="text" name="username">
-          </div>
-          <div>
-            <label for="password">Password:</label>
-            <input id="password" type="password" name="password">
-          </div>
-          <div>
-          <!-- Maybe break this into two fields in the future for first and last name, but would require database update. -->
-            <label for="name">Full Name:</label>
-            <input id="name" type="text" name="name">
-          </div>
-          <div>
-            <label for="email">Email Address</label>
-            <input id="email" type="email" name="email">
-          </div>
-          <div>
-            <!-- This should be a drop menu? -->
-            <label for="cohort">Cohort</label>
-            <input id="cohort" type="text" name="cohort">
-          </div>
-          <div>
-          <!-- This should definitely be a drop menu with two values: student/alumni -->
-            <label for="status">Current Status:</label>
-            <input id="status" type="text" name="status">
-          </div>
-          <div>
-            <label for="github">GitHub ID:</label>
-            <input id="github" type="text" name="github">
-          </div>
-
-          <div>
-            <input type="submit" value="Sign up">
-          </div>
-      </form>
-      <p>
-        <a href="/login">Login to your account &rarr;</a>
-      </p>
+    <div id="signup"></div>
+    <script src="bundle.signup.js"></script>
   </body>
 </html>

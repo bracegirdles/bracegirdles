@@ -9,9 +9,9 @@ const fakeData = {
   },
 
   fakePosts: [
-    {title: 'This is post 1', content: 'www.post1.com'},
-    {title: 'this is post 2', content: 'such a good post'},
-    {title: 'this is post 3', content: 'yeeeeee'}
+    {user: 'Name LastName', title: 'This is post 1', content: 'www.post1.com'},
+    {user: 'Name LastName', title: 'this is post 2', content: 'such a good post'},
+    {user: 'Name LastName', title: 'this is post 3', content: 'yeeeeee'}
   ],
 
   fakePhoto: 'https://www.bigstockphoto.com/images/homepage/2016_bigstock_picks.jpg',
