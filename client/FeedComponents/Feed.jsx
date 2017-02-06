@@ -1,6 +1,6 @@
 import React from 'react';
 import FeedPost from './FeedPost.jsx';
-import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
+import NavBarIn from '../NavBarIn.jsx';
 // fake data for testing
 import fakeData from '../ProfileComponents/fakeData.jsx';
 
@@ -16,9 +16,9 @@ class Feed extends React.Component {
     return (
       <div className="feed-home">
         <NavBarIn />
-        <div>
+        <div className="feed-page">
           <h1>Posts</h1>
-          {this.state.allPosts.map((entry, i) => (
+          {this.state .allPosts.map((entry, i) => (
           <FeedPost post={entry} key={i}/>
           ))}
         </div>

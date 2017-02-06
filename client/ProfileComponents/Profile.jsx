@@ -4,7 +4,7 @@ import Pic from './Pic.jsx';
 import BioList from './BioList.jsx';
 import Content from './Content.jsx';
 import fakeData from './fakeData.jsx';
-import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
+import NavBarIn from '../NavBarIn.jsx';
 
 // TEMPORARY FOR DEV PURPOSES:
 // import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
