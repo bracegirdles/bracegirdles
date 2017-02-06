@@ -17,7 +17,7 @@ const fakeData = {
 
   fakePhoto: 'https://www.bigstockphoto.com/images/homepage/2016_bigstock_picks.jpg',
 
-  fakeFriends: ['jake', 'sully', 'mole'],
+  fakeFriends: ['Jordan Medina', 'Maurice Okumu', 'Anthony Pecchillo'],
 
   fakeAllPosts: [
     {user: 'Patrick Shen', title: 'Check this out', content: ' I\'m writing this post right now.', thumbnail: 'https://www.bigstockphoto.com/images/homepage/2016_bigstock_picks.jpg'},
