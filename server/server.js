@@ -48,7 +48,7 @@ app.post('/signup', function(req, res) {
   console.log('req: ', req);
   controller.users.getOne(req.username).then(function(user) {
     if (!user) {
-      bcrypt.hash(password, null, null, function(err, hash) {
+      bcrypt.hash(req.password, null, null, function(err, hash) {
         controller.users.post(req, res).then(function(user) {
           util.createSession(req, res, user.id);
         });
