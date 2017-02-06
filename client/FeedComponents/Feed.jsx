@@ -13,12 +13,12 @@ class Feed extends React.Component {
 
   render() {
     return (
-      <div className="feed-home">
+      <PageIn>
         <h1>Posts</h1>
         {this.state.allPosts.map(entry => (
           <FeedPost post={entry} />
         ))}
-      </div>
+      </PageIn>
     )
   }
 };

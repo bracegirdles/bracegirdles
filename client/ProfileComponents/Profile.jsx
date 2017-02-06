@@ -4,9 +4,10 @@ import Pic from './Pic.jsx';
 import BioList from './BioList.jsx';
 import Content from './Content.jsx';
 import fakeData from './fakeData.jsx';
+import PageIn from '../PageIn.jsx';
 
 // TEMPORARY FOR DEV PURPOSES:
-import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
+// import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -18,8 +19,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
-        <NavBarIn />
+      <PageIn>
         <header>
           <figure className="profile-banner">
             <img src={"https://hrhqdir.s3.amazonaws.com/assets/ssom-landing-page/assets/images/logo/hack-reactor-logo-gray-blue.png"} style={{width: 350, height: 100}}/>
@@ -29,7 +29,7 @@ class Profile extends React.Component {
           <h1>{this.props.userInfo.name}</h1>
         </header>
           <Content userInfo={this.props.userInfo} posts={this.props.posts} friends={this.props.friends} />
-      </div>
+      </PageIn>
     );
   }
 }
