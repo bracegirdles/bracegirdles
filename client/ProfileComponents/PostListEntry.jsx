@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-const PostListEntry = ({title, content}) => (
+const PostListEntry = ({postEntry}) => (
   <div className="post-list-entry">
-    <h4>{title}</h4>
-    <p>{content}</p>
+    <h4>{postEntry.title}</h4>
+    <p>{postEntry.content}</p>
   </div>
 );
 
