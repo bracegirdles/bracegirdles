@@ -1,9 +1,9 @@
-import { resolve } from 'path';
-import webpackValidator from 'webpack-validator';
-import ProgressBarPlugin from 'progress-bar-webpack-plugin';
-import { getIfUtils } from 'webpack-config-utils';
+const resolve = require('path').resolve;
+const webpackValidator = require('webpack-validator');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const getIfUtils = require('webpack-config-utils').getIfUtils;
 
-export default env => {
+module.exports = env => {
   const { ifProd, ifNotProd } = getIfUtils(env);
 
   const config = webpackValidator({
@@ -13,7 +13,7 @@ export default env => {
       landing: './landingIndex.jsx',
       feed: './feedIndex.jsx',
       signup: './signupIndex.jsx',
-      settings: '.settingsIndex.jsx'
+      settings: './settingsIndex.jsx'
     },
     output: {
       filename: 'bundle.[name].js',
