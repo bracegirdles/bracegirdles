@@ -37,7 +37,7 @@ app.use(session({
 // Routes (with Authentication):
 // ----------------------------------------------------------------------------
 app.get('/', util.checkUser, function(req, res) {
-  res.render('/profile');
+  res.render('feed');
 });
 
 app.get('/signup', function(req, res) {
@@ -79,7 +79,7 @@ app.post('/login', function(req, res) {
         } else {
           res.redirect('/');
         }
-      });      
+      });
     }
   });
 });
@@ -93,6 +93,10 @@ app.get('/logout', function(req, res) {
 app.get('/profile', util.checkUser, function(req, res) {
   res.render('profile');
 });
+
+app.get('/feed', util.checkUser, function(req, res) {
+  res.render('feed');
+})
 
 
 // ----------------------------------------------------------------------------
