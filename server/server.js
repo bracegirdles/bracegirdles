@@ -13,7 +13,7 @@ const Posts = require('../db/models/postModel');
 const app = express();
 
 // Import Router:
-const router = require('./routes.js');    // CHANGE HERE
+// const router = require('./routes.js');    // CHANGE HERE
 const controller = require('./controller.js');
 
 // Server Side Rendering:
@@ -36,12 +36,8 @@ app.use(session({
 // ----------------------------------------------------------------------------
 // Routes (with Authentication):
 // ----------------------------------------------------------------------------
-app.get('/', function(req, res) {
-  if (util.checkUser) {
-    res.redirect('/profile');
-  } else {
-    res.render('landing');
-  }
+app.get('/', util.checkUser, function(req, res) {
+  res.render('/profile');
 });
 
 app.get('/signup', function(req, res) {
@@ -49,13 +45,12 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
-  //controller.users.getOne(req.username)  Use this instead!
-  Users.findOne({where: {username: username}}).then(function(user) {
+  console.log('req: ', req);
+  controller.users.getOne(req.username).then(function(user) {
     if (!user) {
       bcrypt.hash(password, null, null, function(err, hash) {
-        controller.users.post(req, res)
-        .then(function(user) {
-          util.createSession(req, res, user);
+        controller.users.post(req, res).then(function(user) {
+          util.createSession(req, res, user.id);
         });
       });
     } else {
@@ -65,12 +60,17 @@ app.post('/signup', function(req, res) {
   });
 });
 
+app.get('/login', function(req, res) {
+  res.render('landing');
+});
+
 app.post('/login', function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
 
   Users.findOne({where: {username: username}}).then(function(user) {
     if (!user) {
+      console.log('No such user.');
       res.redirect('/');
     } else {
       bcrypt.compare(password, user.get('password'), function(err, match) {
