@@ -11,12 +11,14 @@ const Users = require('../db/models/userModel');
 const Posts = require('../db/models/postModel');
 
 const app = express();
-//imported the router
-const router = require('./routes.js')
+
+// Import Router:
+const router = require('./routes.js');    // CHANGE HERE
+const controller = require('./controller.js');
 
 // Server Side Rendering:
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));  // CHANGE HERE
+app.set('view engine', 'pug');                    // CHANGE HERE
 
 // Parse JSON and Parse Forms (signup/login):
 app.use(bodyParser.json());
@@ -47,26 +49,12 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
-  var username = req.body.username;
-  var password = req.body.password;
-  var name = req.body.name;
-  var email = req.body.email;
-  var cohort = req.body.cohort;
-  var status = req.body.status;
-  var github = req.body.github;
-
+  //controller.users.getOne(req.username)  Use this instead!
   Users.findOne({where: {username: username}}).then(function(user) {
     if (!user) {
       bcrypt.hash(password, null, null, function(err, hash) {
-        Users.create({
-          username: username,
-          password: hash,
-          name: name,
-          email: email,
-          cohort: cohort,
-          status: status,
-          github: github
-        }).then(function(user) {
+        controller.users.post(req, res)
+        .then(function(user) {
           util.createSession(req, res, user);
         });
       });
