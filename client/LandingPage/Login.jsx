@@ -5,7 +5,7 @@ const Login = () => (
     <div className="omb_login">
       <div className="row omb_row-sm-offset-3">
         <div className="col-xs-12 col-sm-6">
-          <form className="omb_loginForm" action="" autocomplete="off" method="POST">
+          <form className="omb_loginForm" action="" autoComplete="off" method="POST">
             <div className="input-group">
               <span className="input-group-addon"><i className="fa fa-user"></i></span>
               <input type="text" className="form-control" name="username" placeholder="Username" />
