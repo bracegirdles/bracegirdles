@@ -1,10 +1,9 @@
 # Hack Reactor Alumni Network
 
-> The Hack Reactor Alumni Network (HRAN) is a social media platform for building/maintaining relationships within the Reactor Core network. 
+###### A social media platform for building/maintaining relationships within the Reactor Core network.
+***
 
-> HRAN provides a platform for leveraging your Hack Reactor/Reactor Core peer network to accelerate your growth as a software engineer.  Build your own profile and link up with your fellow alumns to keep each other up to date on your job search status, current projects, and learning experiences.  Contribute to the networks value by posting self-authored articles on industry experiences and technical discoveries.  Consider this our own private LinkedIn, our *fulcrum* (if you will) to ease the burden of navigating our new journey.  
-
-> THIS WILL BE UPDATED WITH A MESSAGE DIRECTED MORE TOWARD A POTENTIAL DEVELOPER!
+HRAN provides a platform for leveraging your Hack Reactor/Reactor Core peer network to accelerate your growth as a software engineer.  Build your own profile and link up with your fellow alumns to keep each other up to date on your job search status, current projects, and learning experiences.  Contribute to the networks value by posting self-authored articles on industry experiences and technical discoveries.  Consider this our own private LinkedIn, our *fulcrum* (if you will) to ease the burden of navigating our new journey.
 
 ## Team
 
@@ -24,43 +23,80 @@
 
 ## Usage
 
-> Some usage instructions
+Using HRAN is simple!  To get started:
+
+#### Sign Up ####
+
+From the HRAN landing page:  
+
+1. Click the sign up button to navigate to our registration page.
+
+2. Provide your pertinent information in the registration form.  
+    - Upon submitting the form, you will be automatically logged in and redirected to the Main Feed.
+      
+#### Set Up Your Profile ####
+
+3. Click settings to edit your profile.  
+    - Add a Bio
+    - Add your Picture
+    - Add links to your LinkedIn, GitHub, Twitter, etc.
+
+4. Click Profile to see your updated profile.
+
+#### Check Out the Feed ####
+
+5. Click Feed to read the most recent posts from the Alumni Network.
+
+6. Submit your first post!
 
 ## Requirements
 
-- Yarn v0.19.1
 - Node v6.1.0
-- Nodemon 1.11.0
-- MySQL 5.7.17
+- Yarn v0.19.1
+- Nodemon v1.11.0
+- MySQL v5.7.17
+    - To install MySQL, it is recommended that you use Homebrew.
+
+*NOTE:*  We use Yarn instead of NPM.  A very useful NPM-to-Yarn cheatsheet can be found [here](https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc#.o5oqiaubp).
 
 ## Development
 
 ### Installing Dependencies
 
-From within the root directory:
+All required dependencies are stored in the yarn.lock file in the root directory.  At the command line from within the root directory, enter:
 
 ```sh
 yarn
 ```
 ### Transpiling React Codebase
 
-Run the following after making any changes to your front-end React code:
+Run the following at the command line once initially, and then again after making any changes to your front-end React code:
 
 ```sh
 yarn build:dev
 ```
 
+This is for builds *during development*.  In order to build *for production*, simply run:
+
+```sh
+yarn build
+```
+
 ### Starting the Server
 
-To start the server using Nodemon to watch for any file changes:
+To start the server using Nodemon and continuously watch for any file changes, run the following at the command line:
 
 ```sh
 yarn start
 ```
 
+### Begin Development
+
+View the current project at `localhost:3000`.  At this point, you're ready to start development!  
+
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/bracegirdles/bracegirdles/issues).
 
 
 ## Contributing
