@@ -3,9 +3,9 @@
 import React from 'react';
 import BioListEntry from './BioListEntry.jsx'
 
-const BioList = ({userInfo}) => (
+const BioList = (props) => (
   <div className='profile-stats'>
-    <BioListEntry user={userInfo} />
+    <BioListEntry user={props.userInfo} />
   </div>
 );
 

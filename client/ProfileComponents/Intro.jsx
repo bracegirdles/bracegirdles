@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Intro = ({description, email, github}) => (
-  <div className='intro-container'>
-    <div>{description}</div>
-    <div>email: {email}</div>
-    <div>github: {github}</div>
+const Intro = (props) => (
+  <div className='col-lg-8'>
+    <div>{props.description}</div>
+    <div>email: {props.email}</div>
+    <div>github: {props.github}</div>
   </div>
 );
 

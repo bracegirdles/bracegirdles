@@ -3,12 +3,12 @@ import FeedPost from './FeedPost.jsx';
 import NavBarIn from '../NavBarIn.jsx';
 // fake data for testing
 import fakeData from '../ProfileComponents/fakeData.jsx';
-
+import PostSubmit from '../ProfileComponents/PostSubmit.jsx';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allPosts: fakeData.fakePosts //get all posts from posts table
+      allPosts: fakeData.fakeAllPosts //get all posts from posts table
     };
   }
 
@@ -16,11 +16,16 @@ class Feed extends React.Component {
     return (
       <div className="feed-home">
         <NavBarIn />
-        <div className="feed-page">
+        <div className="container">
           <h1>Posts</h1>
-          {this.state .allPosts.map((entry, i) => (
-          <FeedPost post={entry} key={i}/>
-          ))}
+          <PostSubmit />
+          <div className="col-lg-3"></div>
+          <div className="col-lg-6">
+            {this.state.allPosts.map((entry, i) => (
+            <FeedPost post={entry} key={i}/>
+            ))}
+          </div>
+          <div className="col-lg-3"></div>
         </div>
       </div>
     )
