@@ -6,9 +6,9 @@ const Friends = ({friends}) => (
 <div>
   <hr></hr>
   <h3><strong>Friends</strong></h3>
-  <p>{friends.map((friend, i) => (
-      <div className="friend" key={i}>{friend}</div>
-    ))}</p>
+  <div>{friends.map((friend, i) => (
+      <p className="friend" key={i}>{friend}</p>
+    ))}</div>
 </div>
 );
 

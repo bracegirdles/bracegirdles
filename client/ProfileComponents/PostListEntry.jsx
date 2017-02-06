@@ -4,7 +4,7 @@ import React from 'react';
 
 const PostListEntry = ({postEntry}) => (
   <div className="col-lg-9">
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{width: "70%"}}>
       <div className="panel-heading">
         <strong>{postEntry.title}</strong>
       </div>
