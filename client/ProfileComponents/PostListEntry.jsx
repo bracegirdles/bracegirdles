@@ -3,9 +3,15 @@
 import React from 'react';
 
 const PostListEntry = ({postEntry}) => (
-  <div className="post-list-entry">
-    <h4>{postEntry.title}</h4>
-    <p>{postEntry.content}</p>
+  <div className="col-lg-9">
+    <div className="panel panel-default">
+      <div className="panel-heading">
+        <strong>{postEntry.title}</strong>
+      </div>
+      <div className="panel-body">
+        {postEntry.content}
+      </div>
+    </div>
   </div>
 );
 
