@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import fakeData from './ProfileComponents/fakeData.jsx';
 import Feed from './FeedComponents/Feed.jsx';
 
+
+// Currently this is just dummy data.
+// TODO: hook up this component with database queried data
 window.onload = () => {
   ReactDOM.render(<Feed posts={fakeData.posts} />, document.getElementById('feed')
   );
