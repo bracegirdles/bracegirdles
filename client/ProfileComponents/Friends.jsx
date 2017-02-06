@@ -3,12 +3,13 @@
 import React from 'react';
 
 const Friends = ({friends}) => (
-  <div className="col-lg-8">Friends
-    <br></br>
-    {friends.map((friend, i) => (
+<div>
+  <hr></hr>
+  <h3><strong>Friends</strong></h3>
+  <p>{friends.map((friend, i) => (
       <div className="friend" key={i}>{friend}</div>
-    ))}
-  </div>
+    ))}</p>
+</div>
 );
 
 Friends.propTypes = {

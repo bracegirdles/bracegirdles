@@ -29,7 +29,9 @@ class Profile extends React.Component {
           <BioList userInfo={this.props.userInfo} />
           <h1>{this.props.userInfo.name}</h1>
         </header>
+        <div className="content-block">
           <Content userInfo={this.props.userInfo} posts={this.props.posts} friends={this.props.friends} />
+        </div>
       </div>
     );
   }

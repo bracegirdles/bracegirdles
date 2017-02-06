@@ -1,15 +1,18 @@
 import React from 'react';
 
 const Intro = (props) => (
-  <div className='col-lg-8'>
-    <div>{props.description}</div>
-    <div>email: {props.email}</div>
-    <div>github: {props.github}</div>
+  <div className="media-body">
+    <h3><strong>Bio</strong></h3>
+    <p>{props.user.description}</p>
+    <hr></hr>
+    <h3><strong>Info</strong></h3>
+    <p>email: {props.user.email}</p>
+    <p>github: {props.user.github}</p>
   </div>
 );
 
 Intro.propTypes = {
-  userInfo: React.PropTypes.object.isRequired
+  user: React.PropTypes.object.isRequired
 };
 
 export default Intro;

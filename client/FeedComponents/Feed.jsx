@@ -21,9 +21,11 @@ class Feed extends React.Component {
           <PostSubmit />
           <div className="col-lg-3"></div>
           <div className="col-lg-6">
-            {this.state.allPosts.map((entry, i) => (
-            <FeedPost post={entry} key={i}/>
-            ))}
+            <div className="feed-posts">
+              {this.state.allPosts.map((entry, i) => (
+              <FeedPost post={entry} key={i}/>
+              ))}
+            </div>
           </div>
           <div className="col-lg-3"></div>
         </div>

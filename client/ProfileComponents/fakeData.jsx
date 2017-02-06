@@ -1,6 +1,7 @@
 const fakeData = {
   fakeUser: {
     name: 'Patrick Shen',
+    username: 'PatrickShen',
     status: 'Student',
     cohort: 'HR52',
     email: 'thebestemail@emails.com',

@@ -24,6 +24,17 @@ header {
   width:    975px;
 }
 
+div.content-block {
+  width:975px;
+  position: relative;
+  margin-top: 50px;
+}
+
+div.post-entries{
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
 figure.profile-banner {
   left:     0;
   overflow: hidden;
@@ -211,8 +222,13 @@ div.post-list-entry {
   padding-top: 10px;
 }
 
+.post-list-form {
+  margin-bottom: 20px;
+}
+
 div.feed-post {
   display: block;
+  margin-top: 30px;
 }
 
 .thumbnail {
