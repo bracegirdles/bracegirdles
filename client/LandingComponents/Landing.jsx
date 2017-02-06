@@ -6,10 +6,21 @@ import NavBarOut from '../NavBarOut.jsx';
 const Landing = () => (
   <div className="landing-home">
     <NavBarOut />
-    <h1>Hack Reactor Alumni Network</h1>
-    <h3>The Nuclear Network for Hack Reactor Alumni</h3>
-    <a href="/signup"><button className="btn btn-lg btn-primary" type="text">Sign Up</button></a>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="content">
+              <h1>Hack Reactor Alumni Network</h1>
+              <h3>The Nuclear Network for Hack Reactor Alumni</h3>
+              <hr />
+              <a href="/signup"><button className="btn btn-lg btn-primary" type="text">Sign Up!</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 );
+
+// PROVIDE AN IMAGE SOURCE!!!! https://skills.fund/blog
 
 export default Landing;
