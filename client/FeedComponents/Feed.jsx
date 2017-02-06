@@ -1,5 +1,6 @@
 import React from 'react';
 import FeedPost from './FeedPost.jsx';
+import NavBarIn from '../SettingsComponents/NavBarIn.jsx';
 // fake data for testing
 import fakeData from '../ProfileComponents/fakeData.jsx';
 
@@ -13,12 +14,15 @@ class Feed extends React.Component {
 
   render() {
     return (
-      <PageIn>
-        <h1>Posts</h1>
-        {this.state.allPosts.map(entry => (
-          <FeedPost post={entry} />
-        ))}
-      </PageIn>
+      <div className="feed-home">
+        <NavBarIn />
+        <div>
+          <h1>Posts</h1>
+          {this.state.allPosts.map((entry, i) => (
+          <FeedPost post={entry} key={i}/>
+          ))}
+        </div>
+      </div>
     )
   }
 };
