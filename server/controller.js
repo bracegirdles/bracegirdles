@@ -7,7 +7,7 @@ db.sync();
 module.exports = {
   posts: {
     get: (req, res) => {
-    //might need to pass in parameters in findall	
+    //might need to pass in parameters in findall
       Post.findAll()
     //example of findAll parameter
     //findAll({where : {username : req.body.username}})
@@ -47,13 +47,13 @@ module.exports = {
       });
     },
     post: (req, res) => {
-      User.create({
+      return User.create({
         username: req.body.username,
         password: req.body.password,
         name: req.body.name,
         email: req.body.email,
         cohort: req.body.cohort,
-        status: req.body.status, 
+        status: req.body.status,
         github: req.body.github
       })
       .then((user) => {
@@ -63,15 +63,3 @@ module.exports = {
     }
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
