@@ -35,7 +35,7 @@ module.exports = {
   },
   users: {
     getOne: (username) => {
-      User.findOne({where: {username: username}});
+      return User.findOne({where: {username: username}});
     },
     getAll: (req, res) => {
       //Pass in parameters as object with where as property
