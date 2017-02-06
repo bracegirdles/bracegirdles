@@ -4,7 +4,7 @@ const NavBarOut = () => (
   <nav className="navbar navbar-default">
     <div className="container">
       <div className="navbar-header">
-        <a className="navbar-brand" href="/">Hack Reactor Alumni Network</a>
+        <a className="navbar-brand" href="/">HRAN</a>
       </div>
       <div id="navbar" className="collapse navbar-collapse">
         <form action="/login" id="login" className="navbar-form navbar-right" role="form" method="post">
