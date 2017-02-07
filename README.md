@@ -101,4 +101,4 @@ View the project roadmap [here](https://github.com/bracegirdles/bracegirdles/iss
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](https://github.com/bracegirdles/bracegirdles/blob/master/_CONTRIBUTING.md) for contribution guidelines.
